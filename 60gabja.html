@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+           <meta charset = "UTF-8">
+           <title>60갑자_색상띠_요괴메카드</title>
+           <script>
+                     var a10gan = ["갑","을","병","정","무","기","경","신","임","계"];
+                     var a12ji = ["자","축","인","묘","진","사","오","미","신","유","술","해"];
+                     var a12animal = ["쥐","소","호랑이","토끼","용","뱀","말","양","원숭이","닭","개","돼지"];
+                     var aColor = ["청","청","적","적","황","황","백","백","흑","흑"];
+                     var aMecard = ["놀쥐","폭소","호랑나비","미스터문","우신곤","나라콘다","달리마","양피곤","이천숭이","써니꼬꼬","코독","뻔도야지"];
+
+                     window.onload = function() {
+                                document.getElementById("btn_check").onclick = function() {
+                                          var inYear = parseInt(document.getElementById("year").value);
+                                          var outResult = chk60gabja(inYear);
+                                         result.innerHTML = inYear + "년은 "+ outResult[0].gan + outResult[0].ji + "년" +
+                                                             "(" + outResult[0].color + outResult[0].animal + ") " +
+                                                                                        "요괴메카드는 " + outResult[0].mecard + " 정령";
+                                }
+                     }
+
+                     function chk60gabja(year){
+                                var chkResult = [];
+                                chkResult.push({
+                                          gan: a10gan[(year-4)%10],
+                                          ji: a12ji[(year-4)%12],
+                                          animal: a12animal[(year-4)%12],
+                                          color: aColor[(year-4)%10],
+                                          mecard: aMecard[(year-4)%12]
+                                });
+                                return chkResult;
+                     }
+           </script>
+
+</head>
+<body>
+           <p>알고 싶은 년도를 입력하세요 (○○○○년) : <input type="number" id="year" min=1000 max=9999>년
+              <input type="button" id="btn_check" value="확인">
+           </p>
+           <p>=================================================</p>
+           <p id="result">60갑자 확인 결과 : </p>
+           <p> (ex 1905년 을사년, 1970년 신해년, 1979년 기미년, 2019년 기해년) <p>
+           <p>=================================================</p>
+</body>
+</html>
