@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
            <meta charset = "UTF-8">
            <title>60갑자_색상띠_요괴메카드</title>
-           <script>
+           <script lang="javascript">
                      var a10gan = ["갑","을","병","정","무","기","경","신","임","계"];
                      var a12ji = ["자","축","인","묘","진","사","오","미","신","유","술","해"];
                      var a12animal = ["쥐","소","호랑이","토끼","용","뱀","말","양","원숭이","닭","개","돼지"];
@@ -17,6 +17,7 @@
                                          result.innerHTML = inYear + "년은 "+ outResult[0].gan + outResult[0].ji + "년" +
                                                              "(" + outResult[0].color + outResult[0].animal + ") " +
                                                                                         "요괴메카드는 " + outResult[0].mecard + " 정령";
+                                          document.getElementById("imgArea").src="img/mecard"+(((inYear-4)%12)+1)+".jpg";
                                 }
                      }
 
@@ -42,5 +43,25 @@
            <p id="result">60갑자 확인 결과 : </p>
            <p> (ex 1905년 을사년, 1970년 신해년, 1979년 기미년, 2019년 기해년) <p>
            <p>=================================================</p>
+           <table><td>
+           <ol>
+               <li id="1" onclick="javascript:document.getElementById('imgArea').src='img/mecard'+this.id+'.jpg'">1번</li>
+               <li id="2" onclick="javascript:document.getElementById('imgArea').src='img/mecard'+this.id+'.jpg'">2번</li>
+               <li id="3" onclick="javascript:document.getElementById('imgArea').src='img/mecard'+this.id+'.jpg'">3번</li>
+               <li id="4" onclick="javascript:document.getElementById('imgArea').src='img/mecard'+this.id+'.jpg'">4번</li>
+               <li id="5" onclick="javascript:document.getElementById('imgArea').src='img/mecard'+this.id+'.jpg'">5번</li>
+               <li id="6" onclick="javascript:document.getElementById('imgArea').src='img/mecard'+this.id+'.jpg'">6번</li>
+               <li id="7" onclick="javascript:document.getElementById('imgArea').src='img/mecard'+this.id+'.jpg'">7번</li>
+               <li id="8" onclick="javascript:document.getElementById('imgArea').src='img/mecard'+this.id+'.jpg'">8번</li>
+               <li id="9" onclick="javascript:document.getElementById('imgArea').src='img/mecard'+this.id+'.jpg'">9번</li>
+               <li id="10" onclick="javascript:document.getElementById('imgArea').src='img/mecard'+this.id+'.jpg'">10번</li>
+               <li id="11" onclick="javascript:document.getElementById('imgArea').src='img/mecard'+this.id+'.jpg'">11번</li>
+               <li id="12" onclick="javascript:document.getElementById('imgArea').src='img/mecard'+this.id+'.jpg'">12번</li>
+           </ol>
+           </td>
+           <td>
+            <img id="imgArea" src="img/mecard0.jpg" width=50% height=50%>
+           </td>
+           </table>
 </body>
 </html>
